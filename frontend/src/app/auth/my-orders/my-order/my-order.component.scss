@@ -1,0 +1,123 @@
+@import "../../../../styles/classes";
+.order-information {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  @media (max-width: 991px) {
+    .stadium-image {
+      width: 40% !important;
+      img {
+        width: 200px !important;
+      }
+    }
+    .data {
+      width: 60% !important;
+      padding-left: 10px;
+    }
+    .border-bottom {
+      font-size: 14px !important;
+      padding: 2px 0 !important;
+    }
+    .desc {
+      font-size: 12px !important;
+    }
+  }
+  @media (max-width: 767px) {
+    margin-top: 20px;
+  }
+  @media (max-width: 560px) {
+    flex-direction: column;
+    .stadium-image {
+      width: 60% !important;
+      img {
+        width: 300px !important;
+      }
+    }
+    .data {
+      width: 80% !important;
+      margin-top: 20px;
+    }
+  }
+  @media (max-width: 560px) {
+    .data {
+      width: 90% !important;
+      margin-top: 20px;
+    }
+  }
+  @media (max-width: 380px) {
+    .stadium-image {
+      margin-top: 20px !important;
+      width: 60% !important;
+      img {
+        width: 250px !important;
+      }
+    }
+    .data {
+      width: 100% !important;
+      margin-top: 20px;
+    }
+  }
+  .stadium-image {
+    width: 50%;
+    img {
+      width: 250px;
+      border-radius: 20px;
+    }
+  }
+  .data {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+  }
+  .border-bottom {
+    width: 100%;
+    border-bottom: 1px solid #08de08;
+    font-size: 16px;
+    padding: 5px 0;
+  }
+  .desc {
+    font-size: 14px;
+    color: rgb(73, 73, 73);
+    margin-top: 10px;
+  }
+}
+.table {
+  width: 100%;
+  table {
+    @media (max-width: 560px) {
+      width: 90%;
+    }
+    width: 75%;
+    margin: 20px auto;
+    margin-top: 30px;
+  }
+  tr {
+    box-shadow: 0 0px 1px black;
+    margin: 100px 0;
+    &:hover {
+      background-color: rgb(228, 228, 228);
+    }
+  }
+  td {
+    font-size: 16px;
+    padding: 10px 5px;
+    width: 50%;
+    margin: 0 !important;
+    border-left: 1px solid grey;
+    @media (max-width: 991px) {
+      font-size: 14px;
+    }
+  }
+}
+.title {
+  font-family: poppins;
+  font-size: 26px;
+  color: rgb(43, 43, 43);
+  text-align: center;
+  margin-top: 30px;
+  @media (max-width: 991px) {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="sidebar" #sidebar>
+    <menu>
+      <img
+        class="closer"
+        (click)="onCloseMenu()"
+        src="https://img.icons8.com/windows/50/000000/macos-close.png"
+      />
+      <li>Menu</li>
+      <li (click)="onCloseMenu()" routerLink="profile">- Profile</li>
+      <li (click)="onCloseMenu()" routerLink="my_orders">- My Orders</li>
+      <li (click)="logout()">- Logout</li>
+    </menu>
+  </div>
+  <div class="content">
+    <div class="box">
+      <img
+        class="opener"
+        (click)="onOpenMenu()"
+        src="https://img.icons8.com/android/24/000000/menu.png"
+      />
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

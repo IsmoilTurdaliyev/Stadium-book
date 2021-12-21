@@ -1,0 +1,140 @@
+<div class="container">
+  <form [formGroup]="registerForm" data-aos="fade-up" data-aos-duration="1000" (ngSubmit)="submit()">
+    <div class="form-title">Register</div>
+
+    <mat-form-field appearance="fill">
+      <mat-label>First name</mat-label>
+      <input formControlName="firstName" matInput />
+      <mat-icon matSuffix>assignment_ind</mat-icon>
+    </mat-form-field>
+    <small
+      class="input-helper"
+      *ngIf="
+        registerForm.get('firstName')?.errors &&
+        registerForm.get('firstName')?.touched
+      "
+    >
+      <span *ngIf="registerForm.get('firstName')?.errors?.required"
+        >First name is required!</span
+      >
+    </small>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Last name</mat-label>
+      <input formControlName="lastName" matInput />
+      <mat-icon matSuffix>assignment_ind</mat-icon>
+    </mat-form-field>
+    <small
+      class="input-helper"
+      *ngIf="
+        registerForm.get('lastName')?.errors?.required &&
+        registerForm.get('lastName')?.touched
+      "
+    >
+      Last name is required!
+    </small>
+
+    <mat-form-field appearance="fill">
+      <mat-label>E-mail</mat-label>
+      <input formControlName="email" matInput />
+      <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+    <small
+      class="input-helper"
+      *ngIf="
+        registerForm.get('email')?.errors && registerForm.get('email')?.touched
+      "
+    >
+      <span *ngIf="registerForm.get('email')?.errors?.required"
+        >E-mail is required!</span
+      >
+      <span *ngIf="registerForm.get('email')?.errors?.email"
+        >E-mail is not correct!</span
+      >
+    </small>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input formControlName="username" matInput />
+      <mat-icon matSuffix>account_circle</mat-icon>
+    </mat-form-field>
+    <small
+      class="input-helper"
+      *ngIf="
+        registerForm.get('username')?.errors &&
+        registerForm.get('username')?.touched
+      "
+    >
+      <span *ngIf="registerForm.get('username')?.errors?.required"
+        >Username is required!</span
+      >
+      <span *ngIf="registerForm.get('username')?.errors?.minlength"
+        >Minimum 3 character!</span
+      >
+    </small>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input
+        formControlName="password"
+        matInput
+        [type]="hide ? 'password' : 'text'"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+    <small
+      class="input-helper"
+      *ngIf="
+        registerForm.get('password')?.errors &&
+        registerForm.get('password')?.touched
+      "
+    >
+      <span *ngIf="registerForm.get('password')?.errors?.required"
+        >Password is required!</span
+      >
+      <span *ngIf="registerForm.get('password')?.errors?.minlength"
+        >Minimum 6 character!</span
+      >
+    </small>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Phone number</mat-label>
+      <input formControlName="phone" matInput />
+      <mat-icon matSuffix>call</mat-icon>
+    </mat-form-field>
+    <small
+      class="input-helper"
+      *ngIf="
+        registerForm.get('phone')?.errors && registerForm.get('phone')?.touched
+      "
+    >
+      <span *ngIf="registerForm.get('phone')?.errors?.required"
+        >Phone number is required!</span
+      >
+      <span
+        *ngIf="
+          registerForm.get('phone')?.errors?.maxLength ||
+          registerForm.get('phone')?.errors?.minLength
+        "
+        >Invalid phone number!</span
+      >
+    </small>
+
+    <button class="form-button" mat-raised-button type="submit" [disabled]="!registerForm.valid">
+      Register
+    </button>
+
+    <div class="hint">
+      Already have an account?
+          <a [routerLink]="['/', 'login']">Login now!</a>
+    </div>
+  </form>
+</div>

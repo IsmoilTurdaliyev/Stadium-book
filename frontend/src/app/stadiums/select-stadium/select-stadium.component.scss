@@ -1,0 +1,85 @@
+@import "../../../styles/classes";
+a {
+  text-decoration: underline !important;
+}
+
+table {
+  width: 100%;
+  min-width: 500px;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.mat-form-field.mat-focused {
+  font-size: 14px;
+  width: 100%;
+  .mat-form-field-flex {
+    border: 2px solid green;
+  }
+}
+@media (max-width: 526px) {
+  .filter {
+    margin-top: 20px;
+  }
+}
+td,
+th {
+  width: 20%;
+  border-right: 0.5px solid rgba(73, 231, 11, 0.1);
+  padding: 8px !important;
+  &:last-child {
+    width: 25%;
+  }
+}
+.container {
+  padding: 5px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.selections {
+  display: flex;
+  justify-content: space-around;
+  mat-form-field {
+    margin: 0 5px;
+  }
+  @media (max-width: 526px) {
+    flex-direction: column;
+    mat-form-field {
+      margin: 0 0;
+      width: auto;
+    }
+    .search-button {
+      margin-left: 0;
+    }
+  }
+}
+.search-button {
+  height: 50px;
+  padding: 0 35px;
+  @media (max-width: 576px) {
+    height: 40px;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+}
+.mat-elevation-z8 {
+  @media (max-width: 500px) {
+    overflow: scroll;
+  }
+}
+mat-select {
+  z-index: 9999999;
+}
+.province {
+  padding-left: 0;
+}
+.rows {
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(230, 230, 230);
+  }
+}

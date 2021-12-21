@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  min-height: inherit;
+  max-height: inherit;
+  z-index: 1000;
+  svg {
+    animation: loader 1s infinite linear;
+    transform-origin: center;
+
+    @keyframes loader {
+      0% {
+        transform: rotate(-360deg);
+      }
+      50% {
+        transform: rotate(-180deg) translateY(5px);
+      }
+      to {
+        transform: rotate(0deg) translateY(0px);
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import "font-families";
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
+
+* {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #fff;
+  margin: 0;
+  word-wrap: wrap;
+  padding: 0;
+  font-family: "Poppins", Arial;
+}
+
+a {
+  color: #08d665;
+  text-decoration: none;
+  transition: all 0.3s;
+  &:hover {
+    color: #00ad2b;
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

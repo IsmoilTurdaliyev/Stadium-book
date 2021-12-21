@@ -1,0 +1,45 @@
+<div class="container">
+	<form [formGroup]="loginForm" data-aos="fade-up" data-aos-duration="1000" (ngSubmit)="submit()">
+		<div class="form-title">Login</div>
+		<mat-form-field appearance="fill">
+			<mat-label>Your username</mat-label>
+			<input matInput formControlName="login" />
+			<mat-icon matSuffix>account_circle</mat-icon>
+		</mat-form-field>
+		<small
+			class="input-helper"
+			*ngIf="loginForm.get('login')?.errors && loginForm.get('login')?.touched"
+		>
+			<span *ngIf="loginForm.get('login')?.errors?.required">Username is required!</span>
+			<span *ngIf="loginForm.get('login')?.errors?.minlength">Minimum 4 character!</span>
+		</small>
+		<mat-form-field appearance="fill">
+			<mat-label>Your password</mat-label>
+			<input matInput formControlName="password" [type]="hide ? 'password' : 'text'" />
+			<button
+				type="button"
+				mat-icon-button
+				matSuffix
+				(click)="hide = !hide"
+				[attr.aria-label]="'Hide password'"
+				[attr.aria-pressed]="hide"
+			>
+				<mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+			</button>
+		</mat-form-field>
+		<small
+			class="input-helper"
+			*ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched"
+		>
+			<span *ngIf="loginForm.get('password')?.errors?.required">Password is required!</span>
+			<span *ngIf="loginForm.get('password')?.errors?.minlength">Minimum 6 character!</span>
+		</small>
+		<span *ngIf="errorText" style="color: red">
+			{{ errorText }}
+		</span>
+		<button class="form-button" mat-raised-button type="submit" [disabled]="!loginForm.valid">Login</button>
+			<div class="hint">
+				Don't have an account yet?  <a [routerLink]="['/', 'register']"> Register now!</a>
+			</div>
+	</form>
+</div>

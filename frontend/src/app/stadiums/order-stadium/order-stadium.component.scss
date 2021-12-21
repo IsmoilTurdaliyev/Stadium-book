@@ -1,0 +1,95 @@
+@import "../.././../styles/classes";
+.main {
+  padding: 5px;
+  margin: 20px auto !important;
+  @media (max-width: 800px) {
+    width: 95% !important;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    .block {
+      padding: 20px;
+      width: 95%;
+    }
+  }
+  @media (max-width: 460px) {
+    width: 90% !important;
+  }
+}
+
+.form {
+  width: 700px;
+  @media (max-width: 800px) {
+    width: 100% !important;
+  }
+  .form-group {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 440px) {
+      flex-direction: column;
+    }
+    & > .mat-form-field,
+    app-phone-number {
+      @media (max-width: 620px) {
+        width: 48%;
+      }
+      @media (max-width: 440px) {
+        width: 100%;
+      }
+      width: 45%;
+    }
+  }
+  .form-group.number {
+    @media (max-width: 620px) {
+      flex-direction: column;
+      & > div,
+      app-phone-number {
+        width: 100% !important;
+      }
+      & > mat-form-field,
+      app-phone-number {
+        width: 100%;
+      }
+    }
+    & > div {
+      .mat-form-field {
+        width: 100%;
+      }
+      width: 45%;
+    }
+  }
+  .form-group.send {
+    display: flex;
+    justify-content: center;
+    button {
+      padding: 0px 30px;
+      &:hover {
+        box-shadow: 0 0 0 #fff0, inset 0 0 5px rgb(224, 224, 224);
+      }
+    }
+  }
+}
+.mat-form-field-disabled {
+  opacity: 1;
+  color: black !important;
+  .mat-form-field-infix {
+    color: #000;
+  }
+}
+.block {
+  .title {
+    font-size: 32px;
+    text-align: center;
+    font-family: poppins;
+    letter-spacing: 1.5px;
+    padding: 10px;
+    margin-bottom: 30px;
+  }
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.692);
+}
+.mat-datepicker-button {
+  display: none;
+}

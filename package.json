@@ -1,0 +1,29 @@
+{
+  "name": "stadium-booking",
+  "version": "1.0.0",
+  "description": "⚽ Stadium Booking App's Frontend which is written in Angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "pre-commit": "npm run format && git add ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ALL-t-Team/stadium-booking.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ALL-t-Team/stadium-booking/issues"
+  },
+  "homepage": "https://github.com/ALL-t-Team/stadium-booking#readme",
+  "devDependencies": {
+    "husky": "^6.0.0",
+    "lint-staged": "^12.0.2",
+    "prettier": "^2.4.1"
+  }
+}

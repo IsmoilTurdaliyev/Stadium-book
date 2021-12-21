@@ -1,0 +1,96 @@
+@import "../../../styles/classes";
+
+.name {
+  padding: 5px;
+  @media (max-width: 767px) {
+    margin-top: 20px;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    .stadium-information {
+      margin-left: 0 !important;
+      width: 100% !important;
+    }
+  }
+  height: 400px;
+  justify-content: space-between;
+
+  .stadium-image {
+    max-width: 500px;
+    overflow: hidden;
+    transition: transform 0.6s;
+    &:hover {
+      transform: scale(1.2);
+    }
+    img {
+      width: 400px;
+
+      @media (max-width: 426px) {
+        width: 100%;
+      }
+    }
+  }
+
+  .stadium-information {
+    width: 600px;
+    font-size: 18px;
+    @media (max-width: 1199px) {
+      margin-left: 40px;
+    }
+
+    & > div {
+      // margin: 10px 0 ;
+      color: #000b;
+      padding: 10px 0;
+      letter-spacing: 1.5px;
+    }
+
+    .stadium-description {
+      font-size: 16px;
+      letter-spacing: 1.3px;
+    }
+  }
+}
+
+.orders {
+  margin-bottom: 50px;
+}
+
+table {
+  width: 100%;
+  tr {
+    &:hover {
+      background-color: rgb(212, 212, 212);
+      cursor: pointer;
+    }
+  }
+}
+.purchase {
+  text-align: right;
+  font-family: 18px;
+  button {
+    color: rgb(94, 94, 94);
+    &:hover {
+      box-shadow: 0 0 0 #fff0, inset 0 0 5px rgba(221, 221, 221, 0.933);
+      color: #08de45;
+      margin-top: -2px;
+      border: 1px solid rgb(235, 235, 235);
+      box-sizing: content-box;
+    }
+  }
+  margin-bottom: 20px;
+  transition: all 0.3s;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: auto;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #0006;
+}

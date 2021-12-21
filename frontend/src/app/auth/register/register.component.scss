@@ -1,0 +1,21 @@
+@import './../login/login.component.scss';
+.mat-form-field-invalid{
+    mat-icon{
+      color: red;
+    }
+  }
+
+form {
+  .form-title {
+    font-size: 40px;
+    font-style: bold;
+    text-align: center;
+    color: grey;
+    margin-bottom: 20px;
+    font-family: 'Handlee', cursive;
+  }
+  form-button {
+    width: 200px;
+    margin: 0 auto;
+  }
+}

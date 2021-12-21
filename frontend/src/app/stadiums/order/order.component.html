@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="informations d-flex-center">
+    <div class="stadium-image">
+      <img src="../../../assets/stadiums/stadium.jpg" alt="" />
+    </div>
+    <div class="stadium-information">
+      <div class="stadium-name border-bottom">
+        Ordered by: Shukurullo Shukurulloyev
+      </div>
+      <div class="stadium-location border-bottom">
+        From: {{ date | date: "M/d/yy, H:mm" }}
+      </div>
+      <div class="stadium-contact border-bottom">
+        To: {{ date | date: "M/d/yy, H:mm" }}
+      </div>
+      <button mat-raised-button [cdkCopyToClipboard]="informationForCopy">
+        Copy
+      </button>
+    </div>
+  </div>
+</div>

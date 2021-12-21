@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="name d-flex-center">
+    <div class="stadium-image">
+      <img src="assets/images/stadium.jpg" alt="" id="stadium-img" />
+    </div>
+    <div class="stadium-information" *ngIf="stadium">
+      <div class="stadium-name border-bottom">{{ stadium.name }}</div>
+      <div class="stadium-location border-bottom">
+        Location: <a [href]="stadium.map_link" target="_blank">See on Map</a>
+      </div>
+      <div class="stadium-contact border-bottom">
+        Contact:
+        <a [href]="'tel:' + stadium.stadium_owner.telephone">{{
+          stadium.stadium_owner.telephone
+        }}</a>
+      </div>
+    </div>
+  </div>
+  <div class="purchase">
+    <button routerLink="order" mat-raised-button>
+      Order
+      <mat-icon aria-hidden="false" aria-label="Example home icon"
+        >launch</mat-icon
+      >
+    </button>
+  </div>
+  <div class="orders">
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+          <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+        </ng-container>
+
+        <!-- Progress Column -->
+        <ng-container matColumnDef="from">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Boshlanishi</th>
+          <td mat-cell *matCellDef="let row">
+            {{ row.booked_at | date: "H:mm, d-MMMM " }}
+          </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="to">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Tugashi</th>
+          <td mat-cell *matCellDef="let row">
+            {{ row.to | date: "M/d/yy, H:mm" }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr
+          mat-row
+          *matRowDef="let row; columns: displayedColumns"
+          [routerLink]="['orders', 1]"
+        ></tr>
+
+        <tr class="mat-row" *matNoDataRow></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+  </div>
+</div>

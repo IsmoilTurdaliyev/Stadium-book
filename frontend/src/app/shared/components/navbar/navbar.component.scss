@@ -1,0 +1,97 @@
+@import "../../../../styles/_variables";
+@import "../../../../styles/_classes";
+
+nav {
+  height: $nav_height;
+  box-shadow: 0 0 10px rgba(175, 175, 175, 0.527);
+  position: relative;
+  background-color: #fff;
+  .logo-before {
+    @media (max-width: 1050px) {
+      display: none;
+    }
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+  }
+  .logo {
+    font-family: "Poppins";
+    cursor: pointer;
+    font-size: 22px;
+    border-bottom: 1px solid #fff;
+    color: #08d665;
+    font-weight: 700;
+    transition: all 0.3s;
+    &:hover {
+      color: #03b653;
+    }
+  }
+}
+
+mat-toolbar {
+  background-color: rgba(255, 255, 255, 0) !important;
+  height: 100% !important;
+  z-index: 99;
+  position: relative;
+}
+.toggle {
+  display: none;
+  margin-top: 10px;
+  img {
+    width: 25px;
+  }
+}
+.mat-stroked-button {
+  border: none !important;
+  margin: 1px 3.5px;
+}
+@media (max-width: 540px) {
+  .toggle {
+    display: block;
+  }
+  .actions {
+    position: absolute;
+    bottom: -75px;
+    width: 100%;
+    flex-direction: column;
+    left: 0px;
+    transform: translateY(-50%) scaleY(0);
+    display: flex;
+    justify-content: flex-start;
+    transition: transform 0.3s;
+    align-items: flex-start;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 10px 10px rgb(214, 214, 214);
+    button {
+      padding: 2px auto;
+      width: 100%;
+    }
+    button:hover {
+      background-color: rgba(199, 22, 22, 0);
+    }
+  }
+}
+
+button {
+  font-size: 18px;
+  font-family: "Poppins";
+  font-weight: 500;
+  color: #08d665;
+  mat-icon {
+    color: #08d665;
+  }
+  margin-right: 0 !important;
+}
+.account-images {
+  width: 30px;
+  margin-bottom: 2px;
+  border-radius: 50%;
+}
+
+.active {
+  background: #dfd;
+}
+.toggleImg {
+  transition: all 0.3s;
+}

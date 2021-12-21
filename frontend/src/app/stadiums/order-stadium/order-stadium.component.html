@@ -1,0 +1,55 @@
+<div class="main d-flex-center">
+  <div class="block">
+    <div class="title">Ordering</div>
+    <form class="form" [formGroup]="orderForm" (ngSubmit)="submit()">
+      <div class="form-group d-flex-center">
+        <mat-form-field appearance="fill">
+          <mat-label>Firstname</mat-label>
+          <input formControlName="firstName" matInput />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Lastname</mat-label>
+          <input formControlName="lastName" matInput />
+        </mat-form-field>
+      </div>
+      <div class="form-group number d-flex-center">
+        <mat-form-field appearance="fill">
+          <mat-label>Select date</mat-label>
+          <input
+            formControlName="date"
+            matInput
+            [matDatepicker]="dp3"
+            [disabled]="true"
+          />
+          <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+          <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Phone number</mat-label>
+          <input formControlName="phone" placeholder="+998XXXXXXXXX" matInput />
+          <mat-icon matSuffix>call</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>From</mat-label>
+          <input
+            formControlName="from"
+            show-icon="false"
+            type="time"
+            matInput
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>To</mat-label>
+          <input formControlName="to" type="time" show-icon="false" matInput />
+        </mat-form-field>
+      </div>
+      <div class="form-group send">
+        <button mat-raised-button type="submit">Send</button>
+      </div>
+    </form>
+  </div>
+</div>

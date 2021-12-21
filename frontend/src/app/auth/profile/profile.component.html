@@ -1,0 +1,35 @@
+<br />
+<div class="information">
+  <form class="form" [formGroup]="UserInformationForm" (ngSubmit)="submit()">
+    <div class="form-group d-flex-center">
+      <mat-form-field appearance="fill">
+        <mat-label>Firstname</mat-label>
+        <input formControlName="firstName" matInput />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Lastname</mat-label>
+        <input formControlName="lastName" matInput />
+      </mat-form-field>
+    </div>
+    <div class="form-group number d-flex-center">
+      <mat-form-field appearance="fill">
+        <mat-label>Phone number</mat-label>
+        <input formControlName="phone" matInput />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>E-mail</mat-label>
+        <input formControlName="email" matInput />
+      </mat-form-field>
+    </div>
+    <div class="form-group send">
+      <button
+        mat-raised-button
+        type="submit"
+        [disabled]="!UserInformationForm.valid"
+      >
+        Save changes
+      </button>
+    </div>
+  </form>
+</div>

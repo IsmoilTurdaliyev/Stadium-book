@@ -1,0 +1,55 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  img {
+    width: 200px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgb(175, 175, 175);
+  }
+  button {
+    margin: 10px;
+  }
+}
+.form {
+  width: auto;
+  .form-group {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    & > .mat-form-field,
+    app-phone-number {
+      width: 45% !important;
+    }
+    @media (max-width: 460px) {
+      flex-direction: column;
+      & > .mat-form-field,
+      app-phone-number {
+        width: 100% !important;
+      }
+    }
+  }
+  .form-group.number {
+    @media (max-width: 991px) {
+      flex-direction: column;
+      & > div,
+      mat-form-field,
+      app-phone-number {
+        width: 100% !important;
+      }
+    }
+    & > div {
+      .mat-form-field {
+        width: 100%;
+      }
+      width: 45%;
+    }
+  }
+  .form-group.send {
+    display: flex;
+    justify-content: center;
+    button {
+      padding: 0px 30px;
+    }
+  }
+}
